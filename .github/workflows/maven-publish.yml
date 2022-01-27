@@ -51,18 +51,6 @@ jobs:
 #      - name: Set version
 #        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
 
-      - name: tag number
-        run: mvn versions:set -DnewVersion=${{ github.event.release.tag_name }}
-
-      - name: Get latest release version number
-        id: get_version
-        uses: battila7/get-version-action@v2
-
-      - name: Set version
-        run: mvn versions:set -DnewVersion=${{ steps.get_version.outputs.version }}
-
-      - name: Build with Maven
-        run: mvn -B package
 
       - name: Publish to GitHub Packages  Apache Maven
         run: mvn deploy
