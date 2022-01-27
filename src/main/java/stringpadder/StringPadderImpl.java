@@ -23,7 +23,6 @@ public class StringPadderImpl implements StringPadder {
     return stringToPad + getStringToBeAdded(stringToPad, totalLength, paddingCharacter);
   }
 
-  /*It will pad middle side of the given string if the length of the string is less than total length*/
   @Override
   public String padMiddle(String stringToPad, int totalLength) {
     return padMiddle(stringToPad, totalLength, ' ');
