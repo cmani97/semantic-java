@@ -1,5 +1,23 @@
 # Semantic Versioning Changelog
 
+# [1.1.0](https://github.com/cmani97/semantic-java/compare/v1.0.1...v1.1.0) (2022-01-27)
+
+
+### Bug Fixes
+
+* **yml:** updated substring action ([0aabf2b](https://github.com/cmani97/semantic-java/commit/0aabf2b87b867e7b68a1ffcd6ad1c01eba7c94ec))
+* **yml:** updated substring action ([67a2918](https://github.com/cmani97/semantic-java/commit/67a29188d173fc3f6d7c41c25446ef883568ba2d))
+* **yml:** updated substring action1 ([5285586](https://github.com/cmani97/semantic-java/commit/5285586a3257370b9aa95a82fe96c8568367dc58))
+* **yml:** updated substring action2 ([6666b76](https://github.com/cmani97/semantic-java/commit/6666b766542a270a36c294bb4d926e3e847968b4))
+* **yml:** updated substring action3 ([a4fdf96](https://github.com/cmani97/semantic-java/commit/a4fdf9614e621a848ef9674a12ab5c95c02ac49c))
+* **yml:** updated substring action4 ([955a8bf](https://github.com/cmani97/semantic-java/commit/955a8bfeb2fca98b665443ab32a9db11355c03ad))
+
+
+### Features
+
+* **yml:** replace feature ([2cb68f8](https://github.com/cmani97/semantic-java/commit/2cb68f8400558318afe60b0b2f911943a957bc60))
+* **yml:** updated replace feature ([12d9888](https://github.com/cmani97/semantic-java/commit/12d988896647c311c8be7dde1c0a7bda079fd00c))
+
 # [1.1.0-beta.5](https://github.com/cmani97/semantic-java/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2022-01-27)
 
 
