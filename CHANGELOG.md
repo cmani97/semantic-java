@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.1.0-beta.5](https://github.com/cmani97/semantic-java/compare/v1.1.0-beta.4...v1.1.0-beta.5) (2022-01-27)
+
+
+### Bug Fixes
+
+* **yml:** updated substring action4 ([955a8bf](https://github.com/cmani97/semantic-java/commit/955a8bfeb2fca98b665443ab32a9db11355c03ad))
+
 ## [1.0.1](https://github.com/cmani97/semantic-java/compare/v1.0.0...v1.0.1) (2022-01-27)
 
 

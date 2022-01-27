@@ -49,21 +49,33 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::$(git describe --abbrev=0 --tags)
 
-      - name: Set version
-        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
+      - name: substring-action
+        uses: bhowell2/github-substring-action@v1.0.0
+        id: version
+        with:
+          value: ${{ steps.get_version.outputs.VERSION }}
+          index_of_str: "v"          # ${{ steps.get_version.outputs.substring }}
 
-#      - name: tag number
-#        run: mvn versions:set -DnewVersion=${{ github.event.release.tag_name }}
-#
-#      - name: Get latest release version number
-#        id: get_version
-#        uses: battila7/get-version-action@v2
-#
-#      - name: Set version
-#        run: mvn versions:set -DnewVersion=${{ steps.get_version.outputs.version }}
-#
-#      - name: Build with Maven
-#        run: mvn -B package
+      - run: echo ${{ steps.version.outputs.substring }}
+
+      - name: Set version
+        run : mvn versions:set -DnewVersion=${{ steps.version.outputs.substring }}
+
+      #      - name: Set version
+      #        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
+      #
+      #      - name: tag number
+      #        run: mvn versions:set -DnewVersion=${{ github.event.release.tag_name }}
+      #
+      #      - name: Get latest release version number
+      #        id: get_version
+      #        uses: battila7/get-version-action@v2
+      #
+      #      - name: Set version
+      #        run: mvn versions:set -DnewVersion=${{ steps.get_version.outputs.version }}
+      #
+      #      - name: Build with Maven
+      #        run: mvn -B package
 
       - name: Publish to GitHub Packages  Apache Maven
         run: mvn deploy
