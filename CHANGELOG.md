@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.1-beta.2](https://github.com/cmani97/semantic-java/compare/v1.0.1-beta.1...v1.0.1-beta.2) (2022-01-27)
+
+
+### Bug Fixes
+
+* **pom:** modified ([bc173a2](https://github.com/cmani97/semantic-java/commit/bc173a2be87a9b7f70530b399450978e4c64dd42))
+
 ## [1.0.1-beta.1](https://github.com/cmani97/semantic-java/compare/v1.0.0...v1.0.1-beta.1) (2022-01-27)
 
 
