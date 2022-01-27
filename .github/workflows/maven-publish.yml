@@ -50,7 +50,7 @@ jobs:
 #        run: echo ::set-output name=VERSION::${$(git describe --abbrev=0 --tags)/v/}
 
       - name: Get the version
-      - uses: bhowell2/github-substring-action
+        uses: bhowell2/github-substring-action
         id: get_version
         with:
           value: "v1.1.1-beta.1"
