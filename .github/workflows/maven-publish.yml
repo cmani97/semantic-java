@@ -45,14 +45,20 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
 
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::${$(git describe --abbrev=0 --tags)/v/}
+#      - name: Get the version
+#        id: get_version
+#        run: echo ::set-output name=VERSION::${$(git describe --abbrev=0 --tags)/v/}
 
-      - run: echo ${{ steps.get_version.outputs.result }}
+      - uses: bhowell2/github-substring-action
+        id: get_version
+        with:
+          value: $(git describe --abbrev=0 --tags)
+          index_of_str: "v"
+
+      - run: echo ${{ steps.get_version.outputs.substring }}
 
       - name: Set version
-        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
+        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.substring }}
 
 #      - name: Set version
 #        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
