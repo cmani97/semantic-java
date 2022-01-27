@@ -49,11 +49,11 @@ jobs:
 #        id: get_version
 #        run: echo ::set-output name=VERSION::${$(git describe --abbrev=0 --tags)/v/}
 
-      - name: Get the version
-        uses: bhowell2/github-substring-action
+      - name: substring-action
+        uses: bhowell2/github-substring-action@v1.0.0
         id: get_version
         with:
-          value: "v1.1.1-beta.1"
+          value: $(git describe --abbrev=0 --tags)
           index_of_str: "v"
 
       - run: echo ${{ steps.get_version.outputs.substring }}
