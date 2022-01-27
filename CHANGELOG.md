@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+# [1.1.0-beta.1](https://github.com/cmani97/semantic-java/compare/v1.0.1-beta.9...v1.1.0-beta.1) (2022-01-27)
+
+
+### Features
+
+* **yml:** replace feature ([2cb68f8](https://github.com/cmani97/semantic-java/commit/2cb68f8400558318afe60b0b2f911943a957bc60))
+
 ## [1.0.1-beta.9](https://github.com/cmani97/semantic-java/compare/v1.0.1-beta.8...v1.0.1-beta.9) (2022-01-27)
 
 
