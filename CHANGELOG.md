@@ -1,5 +1,13 @@
 # Semantic Versioning Changelog
 
+## [1.0.1-beta.7](https://github.com/cmani97/semantic-java/compare/v1.0.1-beta.6...v1.0.1-beta.7) (2022-01-27)
+
+
+### Bug Fixes
+
+* **yml:** modified publish.yml3 ([a8536fe](https://github.com/cmani97/semantic-java/commit/a8536fef66243691260b2da64c724d9716fd5c53))
+* **yml:** modified publish.yml4 ([393086d](https://github.com/cmani97/semantic-java/commit/393086df411ab618e1b044e87963223ed931cd24))
+
 ## [1.0.1-beta.6](https://github.com/cmani97/semantic-java/compare/v1.0.1-beta.5...v1.0.1-beta.6) (2022-01-27)
 
 
