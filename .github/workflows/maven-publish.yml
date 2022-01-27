@@ -49,17 +49,23 @@ jobs:
 #        id: get_version
 #        run: echo ::set-output name=VERSION::${$(git describe --abbrev=0 --tags)/v/}
 
-      - name: substring-action
-        uses: bhowell2/github-substring-action@v1.0.0
-        id: get_version
-        with:
-          value: $(git describe --abbrev=0 --tags)
-          index_of_str: "v"
+#      - name: substring-action
+#        uses: bhowell2/github-substring-action@v1.0.0
+#        id: get_version
+#        with:
+#          value: $(git describe --abbrev=0 --tags)
+#          index_of_str: "v"          # ${{ steps.get_version.outputs.substring }}
 
-      - run: echo ${{ steps.get_version.outputs.substring }}
+      - name: Get tag
+        id: get_version
+        uses: dawidd6/action-get-tag@v1.1.0
+        with:
+            strip_v: true
+
+      - run: echo ${{ steps.tag.outputs.tag }}
 
       - name: Set version
-        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.substring }}
+        run : mvn versions:set -DnewVersion=${{ steps.tag.outputs.tag }}
 
 #      - name: Set version
 #        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
