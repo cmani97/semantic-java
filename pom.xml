@@ -21,7 +21,19 @@
             <url>https://maven.pkg.github.com/cmani97/semantic-java</url>
         </repository>
     </distributionManagement>
-
+    <scm>
+        <connection>scm:git:git://github.com/cmani97/semantic-java.git</connection>
+        <developerConnection>scm:git:git@github.com:cmani97/semantic-java.git</developerConnection>
+        <url>https://github.com/cmani97/semantic-java/tree/master/</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>Mani</name>
+            <email>cmani09797@gmail.com</email>
+            <organization>com.github.cmani097</organization>
+            <organizationUrl>https://github.com/cmani97/semantic-java</organizationUrl>
+        </developer>
+    </developers>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

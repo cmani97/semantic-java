@@ -9,7 +9,7 @@ on:
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -36,20 +36,18 @@ jobs:
           git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
           git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
-
       - name: setup semantic-release
         run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog -D
 
       - name: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
 
+      - name: Build with Maven
+        run: mvn -B package
+
       - name: Publish to GitHub Packages  Apache Maven
-        run: mvn --batch-mode deploy
+        run: mvn deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
