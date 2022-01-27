@@ -45,20 +45,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
 
-#      - name: Get the version
-#        id: get_version
-#        run: echo ::set-output name=VERSION::$(git describe --abbrev=0 --tags)
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${$(git describe --abbrev=0 --tags)/v/}
 
-      - uses: bluwy/substitute-string-action@v1
-        id: sub
-        with:
-          _input-text: $(git describe --abbrev=0 --tags)
-          v: ''
-      - run: echo ${{ steps.sub.outputs.result }}
+      - run: echo ${{ steps.get_version.outputs.result }}
 
       - name: Set version
-        run : mvn versions:set -DnewVersion=${{ steps.sub.outputs.result }}
+        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
 
+#      - name: Set version
+#        run : mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
+#
 #      - name: tag number
 #        run: mvn versions:set -DnewVersion=${{ github.event.release.tag_name }}
 #
